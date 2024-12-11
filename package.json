@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "tailwindcss": "^3.4.15"
+  },
+  "scripts": {
+    "build:css": "tailwindcss build src/tailwind.css -o Styles/style.css"
+  }
+}

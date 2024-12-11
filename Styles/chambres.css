@@ -1,0 +1,234 @@
+/* Barre de recherche */
+.search-bar {
+    position: fixed; /* Fixe le formulaire sous le header */
+    top: 60px; /* Ajustez selon la hauteur du header */
+    left: 0;
+    width: 100%; /* Prend toute la largeur de la page */
+    background-color: #f4f4f4; /* Couleur de fond */
+    color: #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre élégante */
+    padding: 15px 20px; /* Espacement interne */
+    z-index: 999; /* S'affiche au-dessus du contenu principal */
+    display: flex; /* Organisation en ligne des éléments */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer verticalement */
+    gap: 15px; /* Espacement entre les champs */
+    border-bottom: 1px solid #ccc; /* Ligne de séparation */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Champs d'entrée */
+.search-bar form input,
+.search-bar form button {
+    padding: 7px;
+    font-size: 16px; /* Taille de texte confortable */
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+    font-weight: lighter;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Largeur spécifique pour les champs */
+.search-bar form input[type="date"] {
+    width: 150px;
+}
+.search-bar form input[type="number"] {
+    width: 50px;
+}
+
+/* Bouton de recherche */
+.search-bar form button {
+    background-color: #333; /* Couleur de fond sombre */
+    color: white; /* Texte en blanc */
+    cursor: pointer; /* Pointeur interactif */
+    border: none; /* Pas de bordure */
+    font-weight: bold; /* Texte en gras */
+    font-style: normal;
+    transition: background-color 0.3s ease; /* Animation au survol */
+}
+
+.search-bar form button:hover {
+    background-color: #555; /* Couleur légèrement plus claire au survol */
+}
+
+/* Conteneur général */
+.presentation-chambres .container {
+    margin-top: 160px;
+    display: flex; /* Organisation des filtres et des chambres côte à côte */
+    gap: 20px; /* Espacement entre les colonnes */
+}
+
+/* Section des filtres */
+.presentation-chambres .filters {
+    position: sticky;
+    top: calc(140px + 15px); /* Ajuste selon la hauteur de la barre de recherche + un petit espacement */
+    flex: 1; /* Largeur ajustable pour la colonne de filtres */
+    background-color: #f4f4f4; /* Couleur de fond en harmonie avec la barre de recherche */
+    border: 1px solid #ccc; /* Bordure discrète */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre élégante */
+    position: sticky; /* Reste visible lors du scroll */
+    max-height: calc(100vh - 160px); /* Limite la hauteur au reste visible */
+    overflow-y: auto; /* Ajout d’un défilement si nécessaire */
+    color: #333;
+}
+
+/* Titres et formulaires des filtres */
+.presentation-chambres .filters h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.presentation-chambres .filters form {
+    display: flex;
+    flex-direction: column; /* Organisation verticale des champs */
+    gap: 15px; /* Espacement entre les champs */
+}
+
+.presentation-chambres .filters form label {
+    font-size: 16px;
+    color: #555;
+}
+
+.presentation-chambres .filters form select,
+.presentation-chambres .filters form button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.presentation-chambres .filters form button {
+    background-color: #333; /* Bouton similaire à celui de la barre de recherche */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.presentation-chambres .filters form button:hover {
+    background-color: #555;
+}
+
+/* Section des chambres */
+.presentation-chambres .rooms-display {
+    flex: 3; /* Prend plus d'espace que la colonne des filtres */
+    display: grid; /* Organisation en grille pour les chambres */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adaptatif */
+    gap: 20px; /* Espacement entre les chambres */
+}
+
+/* Carte individuelle d'une chambre */
+.presentation-chambres .room {
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrer le contenu */
+    position: relative;
+}
+
+.presentation-chambres .room img {
+    width: 100%; /* Image responsive */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px; /* Coins légèrement arrondis */
+}
+
+.presentation-chambres .room h2 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 10px 0;
+    color: #333;
+}
+
+.presentation-chambres .room p1 {
+    margin: 5px 0;
+    color: #3a3a3a;
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.presentation-chambres .room p2 {
+    margin: 5px 0;
+    color: #3a3a3a;
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.presentation-chambres .room p3 {
+    margin: 5px 0;
+    color: #3a3a3a;
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    bottom: 20px;
+}
+/* Bouton Réserver */
+
+.presentation-chambres .room form {
+    display: flex;
+    flex-direction: column; /* Organisation verticale des champs */
+    gap: 15px; /* Espacement entre les champs */
+    padding: 25px;
+}
+
+.presentation-chambres .room form label {
+    font-size: 16px;
+    color: #555;
+}
+
+.presentation-chambres .room form select,
+.presentation-chambres .room form button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.presentation-chambres .room form button {
+    background-color: #333; /* Bouton similaire à celui de la barre de recherche */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 4px;
+    top: 350px;
+    left: 15px;
+    right: 15px;
+}
+
+.presentation-chambres .room form button:hover {
+    background-color: #555;
+}
+
+
+
+/* Message d'alerte pour les groupes */
+.alert-message {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#message_faire_recherche {
+    grid-column: 1 / -1; 
+    text-align: center; 
+    font-size: 1.7rem;
+    font-weight: 700; 
+    color: white; 
+    margin-top: 120px;
+}

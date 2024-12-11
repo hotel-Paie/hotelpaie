@@ -1,0 +1,54 @@
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.cadran{
+    background-color: white;
+    color: #333;
+    border: #333 solid 1px;
+    border-radius: 7px;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+.cadran h1{
+    margin: 15px;
+    background-color:palegreen;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cadran h2{
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cadran button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333; 
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+}
+
+.cadran button:hover {
+    background-color: #555;
+}
