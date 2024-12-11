@@ -33,6 +33,21 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
+    // Connexion à la base de données Azure
+    try {
+        $connAzure = new PDO("sqlsrv:server = tcp:hotelpaie.database.windows.net,1433; Database = hotelpaiedb", "chunchunmaru", "Flying9lwa21-");
+        $connAzure->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch (PDOException $e) {
+        print("Error connecting to SQL Server.");
+        die(print_r($e));
+    }
+
+    // SQL Server Extension Sample Code:
+    $connectionInfo = array("UID" => "chunchunmaru", "pwd" => "Flying9lwa21-", "Database" => "hotelpaiedb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+    $serverName = "tcp:hotelpaie.database.windows.net,1433";
+    $connAzure = sqlsrv_connect($serverName, $connectionInfo);
+
     // Fetch room details
     $sql = "SELECT type_chambre, prix_par_nuit, REPLACE(url_image, '../Ressources/', './Ressources/') as url_image FROM chambre GROUP BY type_chambre LIMIT 3";
     $result = $conn->query($sql);
